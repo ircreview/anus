@@ -8,13 +8,13 @@ set {
 	# Server name - set this to a single unique word. This is used to identify
 	# the server in the interjanus protocol.
 	# This does NOT need to be a domain name; it should be short.
-	name yourserver
+	name iRelay
 	# Saved data location - this is the file which janus will load and save
 	# state (such as the list of shared channels) between runs
 	save janus.dat
 	# Janus nick - change this if you want a different interface nick
 	# ident and host are similarly settable
-	janus_nick janus
+	janus_nick iRelay
 	# Administrator password - if set, this enables an "admin" account with 
 	# full access to all commands. Once you have created normal accounts,
 	# this should be disabled as the password is stored in plaintext.
