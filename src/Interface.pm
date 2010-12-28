@@ -219,7 +219,7 @@ sub send {
 			my $src = $act->{src} or next;
 			my $snet = $src->homenet;
 			Event::append(whois_reply($src, $janus, 0, $janus->info('signonts'),
-				312 => [ 'janus.janus', "Janus Interface" ],
+				312 => [ 'anus.anus', "Anus Interface" ],
 			));
 		} elsif ($act->{type} eq 'TSREPORT') {
 			my $src = $act->{src} or next;

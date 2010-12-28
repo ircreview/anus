@@ -89,7 +89,7 @@ sub intro {
 	}
 	my $passifo = $net->cparam('servpass');
 	$passifo = $passifo ? "PASS :$passifo\r\n" : '';
-	$net->add_halfout([ 90, $passifo."USER mirror gamma * :Janus IRC Client\r\nNICK $param->{nick}", 'USER' ]);
+	$net->add_halfout([ 90, $passifo."USER relay * * :IRCReview relay\r\nNICK $param->{nick}", 'USER' ]);
 	$self[$$net] = $param->{nick};
 	$flood_bkt[$$net] = Setting::get(tbf_burst => $net);
 	$flood_ts[$$net] = $Janus::time;
