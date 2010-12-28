@@ -180,7 +180,7 @@ sub cli_hostintro {
 				host => $host,
 				vhost => $host,
 				ident => $ident,
-				name => (defined $gecos ? $gecos : 'MirrorServ Client'),
+				name => (defined $gecos ? $gecos : 'IRCReview ClientBot Client'),
 			},
 			mode => {
 				invisible => 1,
@@ -462,14 +462,14 @@ sub kicked {
 			type => 'PART',
 			src => $nick,
 			dst => $chan,
-			msg => 'Janus relay bot kicked by '.$knick.': '.$msg,
+			msg => 'IRCReview relay bot kicked by '.$knick.': '.$msg,
 		};
 		my @chans = $nick->all_chans();
 		if (!@chans || (@chans == 1 && $chans[0] == $chan)) {
 			push @out, +{
 				type => 'QUIT',
 				dst => $nick,
-				msg => 'Janus relay bot cannot see this nick',
+				msg => 'IRCReview relay bot cannot see this nick',
 			};
 		}
 	}
@@ -533,14 +533,14 @@ $moddef{CORE} = {
 				push @bye, {
 					type => 'QUIT',
 					dst => $nick,
-					msg => 'Relay bot parted channel',
+					msg => 'IRCReview relay bot parted channel',
 				};
 			} else {
 				push @bye, {
 					type => 'PART',
 					src => $nick,
 					dst => $dst,
-					msg => 'Relay bot parted channel',
+					msg => 'IRCReview relay bot parted channel',
 				};
 			}
 		}
