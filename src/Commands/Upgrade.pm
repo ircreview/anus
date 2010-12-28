@@ -63,8 +63,8 @@ Event::command_add({
 		};
 		weaken($final->{dst});
 		Util::Exec::bgrun(sub {
-			system 'wget --output-document janus.tgz http://github.com/miniCruzer/janus/tarball/master' and return 1;
-			system 'tar --extract --gzip --strip 1 --file janus.tgz' and return 1;
+			system 'wget --output-document anus.tgz http://github.com/ircreview/anus/tarball/master' and return 1;
+			system 'tar --extract --gzip --strip 1 --file anus.tgz' and return 1;
 			return 0;
 		}, $final) or Janus::jmsg($dst, 'Failed to fork');
 	}
