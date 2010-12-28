@@ -37,7 +37,7 @@ sub pmsg {
 				dst => $dst,
 				msg => [
 					$nick,
-					'is connected through a Janus link. Home network: '.$src->netname().
+					'is connected through a IRCReview link. Home network: '.$src->netname().
 					'; Home nick: '.$nick->homenick(),
 				],
 			});
