@@ -138,7 +138,7 @@ sub v_chan {
 		$n_c{$$nick.'-'.$$chan} |= 2;
 	}
 	if (@nets > 1 && $n_c{'1-'.$$chan} < 2) {
-		push @err, "Channel $$chan shared but no janus interface bot inside; found in $path";
+		push @err, "Channel $$chan shared but no anus interface bot inside; found in $path";
 	}
 
 	if (@nicks == 0) {

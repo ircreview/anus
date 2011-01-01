@@ -11,7 +11,7 @@ Persist::register_vars('Nick::fails' => \@fails);
 
 Event::command_add({
 	cmd => 'identify',
-	help => 'Identify yourself to janus',
+	help => 'Identify yourself to anus',
 	section => 'Account',
 	syntax => '[<username>] <password>',
 	details => [
@@ -76,7 +76,7 @@ Event::command_add({
 	},
 }, {
 	cmd => 'setpass',
-	help => 'Set your janus identify password',
+	help => 'Set your anus identify password',
 	section => 'Account',
 	syntax => '[<user>] <password>',
 	secret => 1,

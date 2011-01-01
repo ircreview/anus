@@ -36,7 +36,7 @@ sub find_account {
 
 Event::command_add({
 	cmd => 'svsaccount',
-	help => 'Associates a services account with a janus account',
+	help => 'Associates a services account with a anus account',
 	section => 'Account',
 	details => [
 		"\002svsaccount add\002       Authorizes your current login for your current account",

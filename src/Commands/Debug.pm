@@ -7,7 +7,7 @@ use Snapshot;
 
 Event::command_add({
 	cmd => 'dump',
-	help => 'Dumps current janus internal state to a file',
+	help => 'Dumps current anus internal state to a file',
 	section => 'Admin',
 	acl => 'dump',
 	code => sub {

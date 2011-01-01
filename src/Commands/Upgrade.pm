@@ -31,7 +31,7 @@ sub upgrade {
 
 Event::command_add({
 	cmd => 'upgrade',
-	help => 'Upgrades all modules loaded by janus',
+	help => 'Upgrades all modules loaded by anus',
 	syntax => '[force]',
 	section => 'Admin',
 	acl => 'upgrade',
@@ -44,7 +44,7 @@ Event::command_add({
 	},
 }, {
 	cmd => 'up-tar',
-	help => 'Downloads and extracts an updated version of janus via gitweb',
+	help => 'Downloads and extracts an updated version of anus via gitweb',
 	section => 'Admin',
 	acl => 'up-tar',
 	code => sub {

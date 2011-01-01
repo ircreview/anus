@@ -80,7 +80,7 @@ Event::hook_add(
 			net => $network,
 		});
 
-		my $inick = $Conffile::netconf{set}{janus_nick} || 'janus';
+		my $inick = $Conffile::netconf{set}{janus_nick} || 'iRelay';
 
 		$janus = Nick->new(
 			net => $network,
@@ -88,11 +88,11 @@ Event::hook_add(
 			nick => $inick,
 			ts => ($^T - 1000000000),
 			info => {
-				ident => ($Conffile::netconf{set}{janus_ident} || 'janus'),
-				host => ($Conffile::netconf{set}{janus_rhost} || 'services.janus'),
-				vhost => ($Conffile::netconf{set}{janus_host} || 'service'),
-				name => 'Janus Control Interface',
-				opertype => 'Janus Service',
+				ident => ($Conffile::netconf{set}{janus_ident} || 'anus'),
+				host => ($Conffile::netconf{set}{janus_rhost} || 'services.ircreview.com'),
+				vhost => ($Conffile::netconf{set}{janus_host} || 'services.ircreview.com'),
+				name => 'IRCReview Control Interface',
+				opertype => 'IRCReview Service',
 				signonts => $^T,
 				noquit => 1,
 			},
@@ -228,7 +228,7 @@ sub send {
 				src => $src->homenet,
 				dst => $src,
 				msgtype => 'NOTICE',
-				msg => 'Time on '.$RemoteJanus::self->id.'.janus is '.gmtime($Janus::time)." ($Janus::time)",
+				msg => 'Time on '.$RemoteJanus::self->id.'.ircreview.com is '.gmtime($Janus::time)." ($Janus::time)",
 			});
 		}
 	}

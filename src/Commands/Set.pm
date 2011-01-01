@@ -7,7 +7,7 @@ use integer;
 
 Event::command_add({
 	cmd => 'listsettings',
-	help => 'Shows the list of janus settings',
+	help => 'Shows the list of anus settings',
 	section => 'Info',
 	api => '=replyto',
 	code => sub {

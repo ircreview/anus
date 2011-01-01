@@ -45,7 +45,7 @@ sub intro {
 	# we cannot continue until we get the remote CAPAB list so we can
 	# forge the module list. However, we can set up the other server introductions
 	# as they will be sent after auth is done
-	$net->send($net->ncmd(VERSION => 'Janus Hub'));
+	$net->send($net->ncmd(VERSION => 'Anus Hub'));
 }
 
 # parse one line of input
@@ -609,7 +609,7 @@ $moddef{CORE} = {
 				if ($net->auth_should_send) {
 					my $spass = delete $capabs[$$net]{' HMAC_SPASS'} || $net->cparam('sendpass');
 					my $name = $net->cparam('linkname') || $RemoteJanus::self->jname;
-					$auth_sendq[$$net] .= $net->cmd2(undef, SERVER => $name, $spass, 0, $net, "Janus Network Link\r\n");
+					$auth_sendq[$$net] .= $net->cmd2(undef, SERVER => $name, $spass, 0, $net, "Anus Network Link\r\n");
 				}
 				$auth_sendq[$$net] .= $net->ncmd(BURST => $Janus::time)."\r\n";
 			} else {
@@ -661,7 +661,7 @@ $moddef{CORE} = {
 	}, RSQUIT => sub {
 		my $net = shift;
 		my $src = $net->mynick($_[0]) or return ();
-		$_[2] =~ /^(\S+)\.janus$/ or return ();
+		$_[2] =~ /^(\S+)\.ircreview.com$/ or return ();
 		my $dst = $1;
 		{
 			type => 'MSG',
@@ -706,7 +706,7 @@ $moddef{CORE} = {
 			if ($net->auth_should_send) {
 				my $spass = delete $capabs[$$net]{' HMAC_SPASS'} || $net->cparam('sendpass');
 				my $name = $net->cparam('linkname') || $RemoteJanus::self->jname;
-				push @out, $net->cmd2(undef, SERVER => $name, $spass, 0, $net, 'Janus Network Link');
+				push @out, $net->cmd2(undef, SERVER => $name, $spass, 0, $net, 'Anus Network Link');
 			}
 			$auth_sendq[$$net] .= join "\r\n", @out, '';
 		} # ignore START and any others
@@ -905,7 +905,7 @@ $moddef{CORE} = {
 	JNETLINK => sub {
 		my($net,$act) = @_;
 		my $new = $act->{net};
-		my $jid = $new->id().'.janus';
+		my $jid = $new->id().'.ircreview.com';
 		($net->ncmd(SERVER => $jid, '*', 1, $new, 'Inter-Janus link'),
 		 $net->cmd2($new, VERSION => 'Interjanus'));
 	}, NETLINK => sub {
@@ -916,7 +916,7 @@ $moddef{CORE} = {
 			for my $ij (values %Janus::ijnets) {
 				next unless $ij->is_linked();
 				next if $ij eq $RemoteJanus::self;
-				my $jid = $ij->id().'.janus';
+				my $jid = $ij->id().'.ircreview.com';
 				push @out, $net->ncmd(SERVER => $jid, '*', 1, $ij, 'Inter-Janus link');
 				push @out, $net->cmd2($ij, VERSION => 'Interjanus');
 			}
@@ -955,7 +955,7 @@ $moddef{CORE} = {
 	}, JNETSPLIT => sub {
 		my($net,$act) = @_;
 		my $gone = $act->{net};
-		my $jid = $gone->id().'.janus';
+		my $jid = $gone->id().'.ircreview.com';
 		my $msg = $act->{msg} || 'Excessive Core Radiation';
 		return (
 			$net->ncmd(SQUIT => $jid, $msg),

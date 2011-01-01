@@ -40,7 +40,7 @@ our $net_gid;
 
 sub jname {
 	my $net = $_[0];
-	$name[$$net].'.janus';
+	$name[$$net].'.ircreview.com';
 }
 
 sub _init {

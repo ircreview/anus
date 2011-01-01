@@ -16,11 +16,11 @@ my %timespec = (
 
 Event::command_add({
 	cmd => 'ban',
-	help => 'Manages Janus bans (bans remote users)',
+	help => 'Manages Anus bans (bans remote users)',
 	section => 'Network',
 	details => [
 		'Bans are matched on connects to shared channels, and generate autokicks.',
-		" \002BAN LIST\002               List all active janus bans",
+		" \002BAN LIST\002               List all active anus bans",
 		" \002BAN ADD\002 expr           Add a ban and applies it to current users",
 		" \002BAN NADD\002 expr          Add a ban (applied to new users only)",
 		" \002BAN DEL\002 index index... Remove bans by index in the ban list",

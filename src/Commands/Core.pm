@@ -18,20 +18,21 @@ my %help_section = (
 
 Event::command_add({
 	cmd => 'about',
-	help => 'Provides information about janus',
+	help => 'Provides information about anus',
 	section => 'Info',
 	code => sub {
 		Janus::jmsg($_[1],
-			'Janus is a server that allows IRC networks to share certain channels to other',
+			'Anus is a server that allows IRC networks to share certain channels to other',
 			'linked networks without needing to share all channels and make all users visible',
 			'across both networks. If configured to allow it, users can also share their own',
 			'channels across any linked network.',
-			'The source code can be found at http://gitorious.com/janus-irc/janus',
+			'Anus was originally forked from http://gitorious.com/janus-irc/janus and has been',
+			'customized for IRCReview',
 		);
 	}
 }, {
 	cmd => 'modules',
-	help => 'Version information on all modules loaded by janus',
+	help => 'Version information on all modules loaded by anus',
 	section => 'Info',
 	syntax => '[all|janus|other|sha][columns]',
 	api => '=src =replyto ?$',
@@ -140,7 +141,7 @@ Event::command_add({
 	}
 }, {
 	cmd => 'help',
-	help => 'Help on janus commands. See "help help" for use.',
+	help => 'Help on anus commands. See "help help" for use.',
 	section => 'Info',
 	api => '=src =replyto ?$',
 	syntax => "[<command>|\002ALL\002]",

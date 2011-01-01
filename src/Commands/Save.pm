@@ -6,7 +6,7 @@ use warnings;
 
 Event::command_add({
 	cmd => 'save',
-	help => 'Save janus state to filesystem',
+	help => 'Save anus state to filesystem',
 	section => 'Admin',
 	acl => 'oper',
 	api => '=replyto',

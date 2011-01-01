@@ -6,7 +6,7 @@ use warnings;
 
 Event::command_add({
 	cmd => 'showsource',
-	help => 'Shows lines of the janus source',
+	help => 'Shows lines of the anus source',
 	section => 'Info',
 	syntax => '<module> <line>-<line>',
 	api => '=src =replyto $ $',

@@ -457,7 +457,7 @@ Event::hook_add(
 	}, NETSPLIT => act => sub {
 		my $act = shift;
 		my $net = $act->{net};
-		my $msg = 'hub.janus '.$net->jname();
+		my $msg = 'hub.ircreview.com '.$net->jname();
 		my @nicks = $net->all_nicks();
 		my @clean;
 		for my $n (@nicks) {

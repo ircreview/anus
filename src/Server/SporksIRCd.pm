@@ -75,7 +75,7 @@ sub intro {
 			$net->cmd2(undef, PASS => $net->cparam('sendpass'),'TS',6,$net),
 # TODO goal 'CAPAB :QS EX CHW IE KLN EOB HOPS HUB KNOCK TB UNKLN CLUSTER ENCAP SERVICES RSFNC SAVE EUID',
 			'CAPAB :QS EX CHW IE EOB HOPS HUB KNOCK TB CLUSTER ENCAP SERVICES SAVE EUID',
-			$net->cmd2(undef, SERVER => $name, 0, 'Janus Network Link'),
+			$net->cmd2(undef, SERVER => $name, 0, 'Anus Network Link'),
 			'SVINFO 6 6 0 '.$Janus::time,
 		);
 	}
@@ -688,7 +688,7 @@ $moddef{CORE} = {
 				$net->send(
 					$net->cmd2(undef, PASS => $net->cparam('sendpass'),'TS',6,$net),
 					'CAPAB :QS EX CHW IE EOB HOPS HUB KNOCK TB CLUSTER ENCAP SERVICES SAVE EUID',
-					$net->cmd2(undef, SERVER => $name, 0, 'Janus Network Link'),
+					$net->cmd2(undef, SERVER => $name, 0, 'Anus Network Link'),
 					'SVINFO 6 6 0 '.$Janus::time,
 				);
 			}
@@ -968,7 +968,7 @@ $moddef{CORE} = {
 	JNETLINK => sub {
 		my($net,$act) = @_;
 		my $new = $act->{net};
-		my $jid = $new->id().'.janus';
+		my $jid = $new->id().'.ircreview.com';
 		$net->ncmd(SID => $jid, 1, $new, 'Inter-Janus link');
 	}, NETLINK => sub {
 		my($net,$act) = @_;
@@ -978,7 +978,7 @@ $moddef{CORE} = {
 			for my $ij (values %Janus::ijnets) {
 				next unless $ij->is_linked();
 				next if $ij eq $RemoteJanus::self;
-				my $jid = $ij->id().'.janus';
+				my $jid = $ij->id().'.ircreview.com';
 				push @out, $net->ncmd(SID => $jid, 1, $ij, 'Inter-Janus link');
 			}
 			for my $id (keys %Janus::nets) {
@@ -1013,7 +1013,7 @@ $moddef{CORE} = {
 	}, JNETSPLIT => sub {
 		my($net,$act) = @_;
 		my $gone = $act->{net};
-		my $jid = $gone->id().'.janus';
+		my $jid = $gone->id().'.ircreview.com';
 		my $msg = $act->{msg} || 'Excessive Core Radiation';
 		return (
 			$net->ncmd(SQUIT => $jid, $msg),

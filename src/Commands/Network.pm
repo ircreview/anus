@@ -20,7 +20,7 @@ Event::command_add({
 	},
 }, {
 	cmd => 'die',
-	help => "Kill the janus server; does \002NOT\002 restart it",
+	help => "Kill the anus server; does \002NOT\002 restart it",
 	section => 'Admin',
 	acl => 'die',
 	code => sub {
@@ -45,7 +45,7 @@ Event::command_add({
 	},
 }, {
 	cmd => 'restart',
-	help => "Restart the janus server",
+	help => "Restart the anus server",
 	section => 'Admin',
 	acl => 'restart',
 	code => sub {
@@ -77,7 +77,7 @@ Event::command_add({
 	syntax => '<network> <backoff>',
 	details => [
 		"Enables or disables the automatic reconnection that janus makes to a network.",
-		'A rehash will reread the value for the network from the janus configuration',
+		'A rehash will reread the value for the network from the anus configuration',
 		'Specify backoff=0 to disable autoconnect',
 		'Specify backoff=1 to autoconnect quickly',
 		'Higher backoff values will increase the time between connection attempts',

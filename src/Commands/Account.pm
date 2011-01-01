@@ -28,7 +28,7 @@ sub role_acl_super {
 
 Event::command_add({
 	cmd => 'account',
-	help => 'Manages janus accounts',
+	help => 'Manages anus accounts',
 	acl => 'account',
 	section => 'Account',
 	syntax => '<action> <account> [<args...>]',
@@ -94,7 +94,7 @@ Event::command_add({
 	}
 }, {
 	cmd => 'role',
-	help => 'Manages janus account roles',
+	help => 'Manages anus account roles',
 	syntax => '<action> <role> [<args...>]',
 	section => 'Account',
 	acl => 'role',
@@ -140,7 +140,7 @@ Event::command_add({
 	},
 }, {
 	cmd => 'listroles',
-	help => 'Lists all janus access roles',
+	help => 'Lists all anus access roles',
 	section => 'Info',
 	api => '=replyto',
 	code => sub {
