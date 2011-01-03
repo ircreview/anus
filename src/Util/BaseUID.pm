@@ -118,13 +118,8 @@ sub _request_nick {
 	my $maxlen = $net->nicklen();
 	my $given = substr $reqnick, 0, $maxlen;
 	my $given_lc = $net->lc($given);
-
-	$tagged = 1 if exists $nick2uid[$$net]->{$given_lc};
-
-	my $tagre = Setting::get(force_tag => $net);
-	$tagged = 1 if $tagre && $$nick != 1 && $given =~ /$tagre/;
-
-	if ($tagged) {
+	
+	if ($Janus::tagall) {
 		my $tagsep = Setting::get(tagsep => $net);
 		my $tag = $tagsep . $nick->homenet()->name();
 		my $i = 0;

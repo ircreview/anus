@@ -113,6 +113,18 @@ sub read_conf {
 		Log::err("Server name not set! You need set block with a 'name' entry");
 		return;
 	}
+
+	unless (defined($Janus::tagall)) {
+		my $tag = $newconf{set}{tagall} || 1;
+		if ($tag = 1 or $tag = 0) {
+			$Janus::tagall = $tag;
+		}
+		else {
+			Log::err("Bad value $tag for set::tagall");
+			return;
+		}
+	}
+
 	unless ($Janus::lmode) {
 		my $mode = lc $newconf{set}{lmode} || 'link';
 		if ($mode eq 'link') {

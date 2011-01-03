@@ -23,6 +23,10 @@ set {
 	#  link - network partition, channels must be explicitly linked
 	#  bridge - transpaent link, all channels linked, opers are more global
 	lmode link
+
+	# Should we tag all networks with the network they are on?
+	tagall 1
+
 	# Run mode - process execution style
 	#  mplex - Handle SSL and sockets using C; allows for perl process to be
 	#	transparently restarted if perl's memory allocation gets too large

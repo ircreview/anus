@@ -59,6 +59,10 @@ Map of channel name to channel object. This is only used in bridge mode.
 
 Either "link" or "bridge" depending on the link mode.
 
+=item $Janus::tagall
+
+Either true or false depending on the tagall setting.
+
 =item %Janus::modinfo
 
 Map of module name to module information hash.
@@ -81,6 +85,8 @@ our %gnicks;     # by guid
 our $lmode;      # Link mode: either "Link" or "Bridge"
 our %gchans;     # Link:   by keyname
 our %chans;      # Bridge: by name
+
+our $tagall;	 # Tagall: either true or false
 
 our %modinfo;    # by module name
 # load    : 1 if module is being loaded
