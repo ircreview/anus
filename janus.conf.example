@@ -24,7 +24,7 @@ set {
 	#  bridge - transpaent link, all channels linked, opers are more global
 	lmode link
 
-	# Should we tag all networks with the network they are on?
+	# Should we tag all users with the network they are on?
 	tagall 1
 
 	# Run mode - process execution style
